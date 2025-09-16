@@ -54,9 +54,13 @@ The Black-Scholes model is a cornerstone of financial mathematics for pricing Eu
 *   **The Black-Scholes Equation** is a partial differential equation that describes how the price of an option evolves over time. It assumes a lognormal distribution of stock prices and considers factors like the underlying asset's price, volatility, time to expiration, and the risk-free interest rate.
 
 *   **The Black-Scholes Formula** is the closed-form solution to the equation for a European call option. Conceptually, it calculates the option price as the difference between two parts:
-    > `C = S * N(d1) - K * e^(-rT) * N(d2)`
-    *   **`S * N(d1)`**: Represents the expected benefit of receiving the stock if the option finishes in the money.
-    *   **`K * e^(-rT) * N(d2)`**: Represents the present value of paying the strike price (`K`) if the option is exercised.
+
+    $$
+    C = S \, N(d_1) - K e^{-rT} N(d_2)
+    $$
+
+    *   **$S \, N(d_1)$**: Represents the expected benefit of receiving the stock if the option finishes in the money.  
+    *   **$K e^{-rT} N(d_2)$**: Represents the present value of paying the strike price ($K$) if the option is exercised.
     
     In simple terms, it's what you expect to get minus what you expect to pay, with both values adjusted for probability and the time value of money.
 
@@ -85,4 +89,3 @@ The network learns the complex, non-linear relationships between the inputs and 
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or improvements, please feel free to create a pull request or open an issue.
-
