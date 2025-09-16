@@ -36,11 +36,11 @@ To run this notebook, you will need to have Python 3 and the following libraries
 
 1.  Clone this repository to your local machine:
     ```bash
-    git clone https://github.com/your-username/OptionPricing.git
+    git clone https://github.com/Youssef-Kallala/Option-Pricing-using-neural-network.git
     ```
 2.  Navigate to the project directory:
     ```bash
-    cd OptionPricing
+    cd Option-Pricing-using-neural-network
     ```
 3.  Install the required libraries. You can do this using pip:
     ```bash
@@ -57,20 +57,7 @@ To run this notebook, you will need to have Python 3 and the following libraries
 
 The notebook covers the following key formulas and concepts:
 
-*   **Black-Scholes Equation**:
-    $$
-    \frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + rS \frac{\partial V}{\partial S} - rV = 0
-    $$
-*   **Black-Scholes Formula for a European Call Option**:
-    $$
-    C = S \cdot \Phi(d_1) - X e^{-rT} \cdot \Phi(d_2)
-    $$
-    with
-    $$
-    d_1 = \frac{\ln(S/X) + (r + \sigma^2 / 2) T}{\sigma \sqrt{T}}, \quad d_2 = d_1 - \sigma \sqrt{T}
-    $$
-*   **Binomial Option Pricing**: This method uses a discrete-time model of the varying price over time of the underlying financial instrument.
-*   **Longstaff-Schwartz Monte Carlo Method**: This is a type of Monte Carlo method used to calculate the value of American options. It works by using least squares to estimate the conditional expected payoff to the option holder from continuation.
+![Mathematical Formulas](mathematical_formulas.png)
 
 ## Contributing
 
