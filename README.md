@@ -55,9 +55,9 @@ The Black-Scholes model is a cornerstone of financial mathematics for pricing Eu
 
 *   **The Black-Scholes Formula** is the closed-form solution to the equation for a European call option. Conceptually, it calculates the option price as the difference between two parts:
 
-    $$
+    **$$
     C = S \, N(d_1) - K e^{-rT} N(d_2)
-    $$
+    $$ **
 
     *   **$S \, N(d_1)$**: Represents the expected benefit of receiving the stock if the option finishes in the money.  
     *   **$K e^{-rT} N(d_2)$**: Represents the present value of paying the strike price ($K$) if the option is exercised.
