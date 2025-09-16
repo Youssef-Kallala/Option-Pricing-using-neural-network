@@ -1,68 +1,81 @@
-# Computational Methods for Financial Options Pricing
+# Option Pricing Models
 
-This repository contains a Jupyter Notebook (`Code.ipynb`) that explores and implements various computational methods for pricing financial options. It covers both European and American options, moving from classical numerical models to Monte Carlo simulations and finally to a modern machine learning approach using a neural network.
+This repository contains a Jupyter Notebook that explores various methods for pricing American options. It provides both theoretical explanations and practical implementations of popular option pricing models.
 
-## Overview
+## Features
 
-The notebook serves as an educational and practical guide to options pricing. It begins with the theoretical underpinnings of the Black-Scholes model and progressively implements four different pricing techniques, complete with explanations and visualizations.
+*   **Black-Scholes Model**: Includes the foundational Black-Scholes equation and the formula for pricing European call options.
+*   **Binomial Option Pricing Model**: Implements the binomial method for valuing American options, with visualizations of option values over time.
+*   **Longstaff-Schwartz Monte Carlo Method**: A detailed implementation of this advanced method for pricing American options using backward induction and Laguerre polynomials.
+*   **Neural Network for Option Pricing**: Demonstrates how a neural network can be trained to approximate the Black-Scholes model for European call options.
+*   **Visualizations**: The notebook includes various plots to help visualize the option prices and the convergence of the Monte Carlo simulations.
 
-### Methods Implemented
+## Table of Contents
 
-The following pricing models are demonstrated in the notebook:
+*   [Getting Started](#getting-started)
+    *   [Prerequisites](#prerequisites)
+    *   [Installation](#installation)
+*   [Usage](#usage)
+*   [Mathematical Background](#mathematical-background)
+*   [Contributing](#contributing)
+*   [License](#license)
 
-1.  **Binomial Options Pricing Model:** A classic lattice-based method for pricing European options by modeling the underlying asset's price movement over discrete time intervals.
-2.  **American Options Binomial Model:** An extension of the binomial model that accounts for the early-exercise feature of American options.
-3.  **Longstaff-Schwartz Monte Carlo Method:** A sophisticated simulation technique for pricing American options. It uses backward induction and regression on Laguerre polynomials to estimate the option's continuation value at each time step.
-4.  **Neural Network Price Approximation:** A deep learning model trained to learn and approximate the Black-Scholes formula for European call options, demonstrating the power of AI in replicating complex financial mathematics.
+## Getting Started
 
-### Visualizations
+### Prerequisites
 
-The notebook includes several plots to help visualize the results and concepts, such as:
-- Simulation of asset price paths using Geometric Brownian Motion.
-- Convergence of the American option price as the number of binomial steps increases.
-- A comparison of the continuation value vs. the immediate exercise value in the Longstaff-Schwartz method.
-- Convergence of the Monte Carlo price as the number of simulation paths increases.
+To run this notebook, you will need to have Python 3 and the following libraries installed:
 
-## Requirements
+*   matplotlib
+*   numpy
+*   torch
+*   scikit-learn
+*   scipy
 
-To run this notebook, you will need Python 3.x and the following libraries:
+### Installation
 
-*   NumPy
-*   Matplotlib
-*   Scikit-learn
-*   SciPy
-*   PyTorch
-
-You can install the dependencies using pip:
-```bash
-pip install numpy matplotlib scikit-learn scipy torch
-```
-**Note:** The original notebook execution shows a `ModuleNotFoundError` for `torch`. Please ensure you have it installed before running the final sections.
-
-## How to Use
-
-1.  **Clone the repository:**
+1.  Clone this repository to your local machine:
     ```bash
-    git clone https://github.com/your-username/your-repository-name.git
-    cd your-repository-name
+    git clone https://github.com/your-username/OptionPricing.git
     ```
-2.  **Install the dependencies** as listed in the Requirements section.
-3.  **Launch Jupyter Notebook or Jupyter Lab:**
+2.  Navigate to the project directory:
     ```bash
-    jupyter notebook
+    cd OptionPricing
     ```
-4.  Open `Code.ipynb` and run the cells sequentially to see the implementation and results of each pricing method.
+3.  Install the required libraries. You can do this using pip:
+    ```bash
+    pip install matplotlib numpy torch scikit-learn scipy
+    ```
 
-## Notebook Structure
+## Usage
 
-The notebook is divided into the following main sections:
+1.  Open the `OptionPricing.ipynb` file in a Jupyter Notebook environment.
+2.  Run the cells in the notebook to see the implementation and visualizations of the different option pricing models.
+3.  You can modify the parameters in the code cells to explore how they affect the option prices.
 
-1.  **Introduction to Options:** A theoretical overview of European and American options, including the Black-Scholes equation and formula.
-2.  **Binomial Pricing Models:** Implementation of binomial models for both European and American options.
-3.  **Longstaff-Schwartz Monte Carlo Method:** A detailed implementation for pricing American options with early exercise.
-4.  **Neural Network for Pricing:** A demonstration of how a neural network can be trained to learn the Black-Scholes pricing function from synthetic data.
+## Mathematical Background
 
-## Key Findings
+The notebook covers the following key formulas and concepts:
 
-- The notebook effectively demonstrates the price convergence of numerical methods like the binomial and Monte Carlo models as the number of steps or paths increases.
-- The neural network successfully approximates the Black-Scholes formula with high accuracy, showcasing a powerful alternative for pricing complex derivatives.
+*   **Black-Scholes Equation**:
+    $$
+    \frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + rS \frac{\partial V}{\partial S} - rV = 0
+    $$
+*   **Black-Scholes Formula for a European Call Option**:
+    $$
+    C = S \cdot \Phi(d_1) - X e^{-rT} \cdot \Phi(d_2)
+    $$
+    with
+    $$
+    d_1 = \frac{\ln(S/X) + (r + \sigma^2 / 2) T}{\sigma \sqrt{T}}, \quad d_2 = d_1 - \sigma \sqrt{T}
+    $$
+*   **Binomial Option Pricing**: This method uses a discrete-time model of the varying price over time of the underlying financial instrument.
+*   **Longstaff-Schwartz Monte Carlo Method**: This is a type of Monte Carlo method used to calculate the value of American options. It works by using least squares to estimate the conditional expected payoff to the option holder from continuation.
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions or improvements, please feel free to create a pull request or open an issue.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
